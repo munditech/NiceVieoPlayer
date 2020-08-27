@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.xiao.nicevieoplayer"
-        minSdkVersion 29
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
@@ -35,14 +35,14 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation(rootProject.ext.dependencies.espresso, {
+    implementation('androidx.test.espresso:espresso-core:3.3.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation project(':nicevideoplayer')
-    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation rootProject.ext.dependencies.rxpermissions
     implementation rootProject.ext.dependencies.rxjava
-    testImplementation rootProject.ext.dependencies.junit
-    implementation rootProject.ext.dependencies.recyclerview
-    implementation rootProject.ext.dependencies.glide
+    testImplementation 'junit:junit:4.13'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
 }

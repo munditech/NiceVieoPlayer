@@ -35,7 +35,6 @@ public class TinyWindowPlayActivity extends AppCompatActivity {
         Glide.with(this)
                 .load("http://tanzi27niu.cdsb.mobi/wps/wp-content/uploads/2017/05/2017-05-17_17-30-43.jpg")
                 .placeholder(R.drawable.img_default)
-                .crossFade()
                 .into(controller.imageView());
         mNiceVideoPlayer.setController(controller);
     }

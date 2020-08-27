@@ -6,7 +6,7 @@ android {
     buildToolsVersion '30.0.1'
 
     defaultConfig {
-        minSdkVersion 23
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
@@ -39,11 +39,11 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestImplementation(rootProject.ext.dependencies.espresso, {
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.3.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation rootProject.ext.dependencies.appcompatV7
-    implementation rootProject.ext.dependencies.junit
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'junit:junit:4.13'
     implementation 'tv.danmaku.ijk.media:ijkplayer-java:0.8.3'
 //    compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.8.3'
     implementation 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.3'
